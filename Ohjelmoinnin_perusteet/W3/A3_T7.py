@@ -1,73 +1,72 @@
-def one_multi_branched_decision(initial_value: int) -> int:
-    result = initial_value
-    print("Using: One multi-branched decision structure.")
+print("Program starting.")
+print("Testing decision structures.")
 
-    if result >= 400:
-        result += 44
-    elif result >= 200:
-        result += 22
-    elif result >= 100:
-        result += 11
-        
-    return result
+initial_value_str = input("Insert an integer: ")
+initial_value = int(initial_value_str)
+result_value = initial_value
 
-def independent_if_statements(initial_value: int) -> int:
-    result = initial_value
-    print("Using: In multiple independent if-statements.")
+print("\nOptions:")
+print("1 - In one multi-branched decision")
+print("2 - In multiple independent if-statements")
+print("0 - Exit")
 
-    if result >= 400:
-        result += 44
-        
-    if result >= 200:
-        result += 22
+choice_str = input("Your choice: ")
+choice = int(choice_str)
 
-    if result >= 100:
-        result += 11
-        
-    return result
+print("")
 
-def main():
-    print("Program starting.")
-    print("Testing decision structures.")
+if choice == 1:
+    print("Using: one multi-branched decision structure.")
+
+    if initial_value >= 400:
+        result_value += 44
+        # print(f"Condition: Value >= 400 was met. Added 44.")
+
+    elif initial_value >= 200:
+        result_value += 22
+        # print(f"Condition: Value >= 200 was met. Added 22.")
+
+    elif initial_value >= 100:
+        result_value += 11
+        # print(f"Condition: Value >= 100 was met. Added 11.")
+
     
-    initial_value = None
-    while initial_value is None:
-        try:
-            initial_value = int(input("Insert an integer: "))
-        except ValueError:
-            print("Invalid input. Please insert a whole number (integer).")
+
+
+elif choice == 2:
+    print("Using: multiple independent if-statements.")
+
+    added_count = 0
+
+    if initial_value >= 400:
+        result_value += 44
+        added_count += 44
     
-    try:
-        print("\nOptions:")
-        print("1 - In one multi-branched decision")
-        print("2 - In multiple independent if-statements")
-        print("0 - Exit")
+
+    if initial_value >= 200:
+        result_value += 22
+        added_count += 22
+    
+
+    if initial_value >= 100:
+        result_value += 11
+        added_count += 11
+    
         
-        choice = int(input("Your choice: "))
-        
-        final_result = None
+    if added_count == 0:
+        print("No conditions were met. Value remains unchanged.")
 
-        if choice == 1:
-            final_result = one_multi_branched_decision(initial_value)
-            
-        elif choice == 2:
-            final_result = independent_if_statements(initial_value)
-            
-        elif choice == 0:
-            print("Exiting...")
-            
-        else:
-            print("Unknown option.")
 
-        if final_result is not None:
-            print(f"Result is: {final_result}")
+elif choice == 0:
+    print("Exiting...")
+    result_value = initial_value
 
-    except ValueError:
-        print("Invalid choice. Please enter 1, 2, or 0.")
-    except Exception as e:
-        print(f"An unexpected error occurred in the main process: {e}")
+else:
+    print("Unknown option.")
+    result_value = initial_value
 
-    print("Program ending.")
+if choice in [1, 2]:
+    print("-" * 30)
+    print(f"Result is: {result_value}")
 
-if __name__ == "__main__":
-    main()
+print("\nProgram ending.")
