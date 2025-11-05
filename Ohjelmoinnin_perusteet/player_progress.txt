@@ -1,7 +1,0 @@
-current_location;next_location;passphrase
-0;1;qvfpvfpyvar
-1;2;qvfpvfpyvar
-2;3;qvfpvfpyvar
-3;4;qvfpvfpyvar
-Rira.zber.qrirybe
-4;0;ubzrcynpr
