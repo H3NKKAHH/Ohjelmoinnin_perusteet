@@ -3,6 +3,9 @@
 # Developer: Henri Holopainen
 # Date: 2025-11-26
 ####################################################################
+
+# OHJELMA KÄYNNISTYY TAPAAN "py A9_T7.py A9_T7_D2.txt A9_T7_F2.txt"
+
 import sys
 import os
 
@@ -59,4 +62,5 @@ def main():
     sys.exit(0)
 
 if __name__ == "__main__":
+
     main()
